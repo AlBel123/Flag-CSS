@@ -1,44 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poster</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <title>Flexbox Pricing Table</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-<style>
-  *{
-    background-color: black;
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Sono', sans-serif;
+      
+    }
 
-}
+    .pricing-container{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh; 
+      gap:3rem;
+    }
 
-#poster{
-    width:50%;
-    color: antiquewhite;
-    text-align: center;
-    margin: 8% 25%;
+    .pricing-plan {
+      flex:1;
+      max-width: 400px;
+      min-width:300px;
+      padding: 20px;
+      background-color:rgb(234, 229, 229);
+      border:2px solid gainsboro;
+      border-radius: 20px;
+      text-align: center;
+    
+    }
 
-}
-h1{
-    font-family:'Libre Baskerville', serif;
-    text-transform: uppercase;
- }
-img{
-    border:5px solid antiquewhite;
-    width:100%;
-}
 
-</style>
+    .plan-title{
+      font-size: x-large;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-bottom: 2px solid lightgray;
+      padding: 25px 0 10px 0;
+    }
+
+    .plan-price{
+      display: flex;
+      justify-content: center; 
+      padding-top: 10px;
+      font-size: 10pt;
+    }
+
+    .plan-price span{
+      font-size: 28pt;
+      font-weight: 600;
+    }
+    
+    .plan-features{
+      list-style: none;
+      padding: 5px;
+      font-size: 9pt;
+      
+    }
+li{
+      padding-top: 10px;
+    }
+    .plan-button{
+     
+      background-color: rgb(21, 222, 65);
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: antiquewhite;
+      padding: 7px;
+      border: none;
+      border-radius: 5px;
+      
+    
+    }
+
+    .plan-button:hover{
+      border: 2px solid rgb(46, 189, 46);
+    }
+
+    
+
+
+    /* Hint: What can you do with a media query and flexbox? */
+   
+    @media (max-width: 1250px) {
+      .pricing-container{
+        flex-direction: column;
+        height: 100%;
+        
+
+        }
+ 
+      }
+    
+
+
+  </style>
 </head>
+
 <body>
-  <div id="poster">
-    <img src="./assets/images/love.jpg" alt="Girl with Avocado">
-    <h1>the picture worths</h1>
-    <p>a thousand words</p>
+  <div class="pricing-container">
+    <div class="pricing-plan">
+      <div class="plan-title">Basic</div>
+      <div class="plan-price"><span>$9.99</span><br>/mo</div>
+      <ul class="plan-features">
+        <li>✅ 10GB Storage</li>
+        <li>✅ 1 User</li>
+        <li>🚫 Support</li>
+      </ul>
+      <button class="plan-button">Sign Up</a>
+    </div>
+    <div class="pricing-plan">
+      <div class="plan-title">Standard</div>
+      <div class="plan-price"> <span>$19.99</span><br>/mo</div>
+      <ul class="plan-features">
+        <li>✅ 50GB Storage</li>
+        <li>✅ 5 Users</li>
+        <li>✅ Phone &amp; Email Support</li>
+      </ul>
+      <button class="plan-button">Sign Up</a>
+    </div>
+    <div class="pricing-plan">
+      <div class="plan-title">Premium</div>
+      <div class="plan-price"><span>$49.99</span><br>/mo</div>
+      <ul class="plan-features">
+        <li>✅ 100GB Storage</li>
+        <li>✅ 10 Users</li>
+        <li>✅ 24/7 Support</li>
+      </ul>
+      <button class="plan-button">Sign Up</a>
+    </div>
   </div>
-  
+
 </body>
+
 </html>
